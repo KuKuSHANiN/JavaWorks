@@ -6,81 +6,59 @@ import java.util.Scanner;
 public class Test {
 
     public static void main(String[] args) {
-
+        ArrayList<Student> students = new ArrayList<>();
+        Integer choose;
         Scanner in = new Scanner(System.in);
-        System.out.println("1 Create new Student");
-        System.out.println("2 Show journal");
-        System.out.println("3 Quite");
-        int choose = in.nextInt();
-        ArrayList<String> One = new ArrayList<>();
-        var n = 0;
-        Student OneStud = new Student();
-        var aN = OneStud.name;
-        var aA = OneStud.age;
-        var aK = OneStud.klass;
         do {
+            System.out.println("1 Create new Student");
+            System.out.println("2 Show journal");
+            System.out.println("3 Quite");
+            System.out.print("Your choice: ");
+            choose = in.nextInt();
+
             switch (choose) {
                 case 1:
-                    System.out.println("Она вот тут");
-                    var StudOne = new Student();
-                    System.out.println("Она вот тут2");
-                    System.out.println("Она вот тут3");
-                    aN = in.nextLine();
-                    aA = in.nextLine();
-                    aK = in.nextLine();
-                    One.add(aN);
-                    One.add(aA);
-                    One.add(aK);
-                    One.add("|");
-                    System.out.println(One);
+                    in = new Scanner(System.in);
+                    String name;
+                    System.out.print("Please, enter the name: ");
+                    name = in.nextLine();
+                    System.out.print("Please, enter the age: ");
+                    var age = in.nextLine();
+                    System.out.print("Please, enter the class number: ");
+                    var classNumber = in.nextLine();
+
+                    var student = new Student();
+                    student.setAge(age);
+                    student.setName(name);
+                    student.setClassNumber(classNumber);
+
+                    students.add(student);
                     break;
                 case 2:
-                    if (One.isEmpty()) {
-                        System.out.println(One);
-                        break;
-                    } else break;
+                    System.out.println("This is a journal!");
+                    System.out.println("***********************");
+                    System.out.println("name     age     class");
+                    if (students.isEmpty()) {
+                        System.out.println("No students are here");
+                    } else {
+                        for (Student st : students) {
+                            System.out.println(st.getName() + "  " + st.getAge() + "  " + st.getClassNumber());
+                        }
+                    }
+                    System.out.println("***********************");
+                    break;
                 case 3:
-                    System.out.println("Eto karoche tipa vishel");
+                    System.out.println("Finish!");
                     break;
                 default:
                     break;
             }
 
+            for (int i = 0; i < 50; ++i) System.out.println();
+
         }
-        while (choose != 3);
+        while (!choose.equals(3));
+
+        in.close();
     }
 }
-
-class Student {
-    public String name;
-    public String age;
-    public String klass;
-
-    public Student() {
-        // name = n;
-        // age = a;
-        //klass = k;
-
-    }
-
-    public String name() {
-        System.out.println("Name pls");
-        Scanner in = new Scanner(System.in);
-        return in.nextLine();
-    }
-
-    public int age() {
-        System.out.println("Age pls");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
-    }
-
-    public int klass() {
-        System.out.println("Klass pls");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
-    }
-}
-
-// write your code here
-
