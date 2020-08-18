@@ -9,6 +9,7 @@ public class Test {
         ArrayList<Student> students = new ArrayList<>();
         Integer choose;
         Scanner in = new Scanner(System.in);
+        Journal StudentOnTurn = new Journal();
         do {
             System.out.println("1 Create new Student");
             System.out.println("2 Show journal");
@@ -18,33 +19,17 @@ public class Test {
 
             switch (choose) {
                 case 1:
-                    in = new Scanner(System.in);
-                    String name;
-                    System.out.print("Please, enter the name: ");
-                    name = in.nextLine();
-                    System.out.print("Please, enter the age: ");
-                    var age = in.nextLine();
-                    System.out.print("Please, enter the class number: ");
-                    var classNumber = in.nextLine();
 
-                    var student = new Student();
-                    student.setAge(age);
-                    student.setName(name);
-                    student.setClassNumber(classNumber);
-
-                    students.add(student);
+                    StudentOnTurn.EnterTheName();
+                    StudentOnTurn.EnterTheAge();
+                    StudentOnTurn.EnterTheClassNumber();
+                    StudentOnTurn.AddNewStudentsInJournal();
                     break;
                 case 2:
                     System.out.println("This is a journal!");
                     System.out.println("***********************");
                     System.out.println("name     age     class");
-                    if (students.isEmpty()) {
-                        System.out.println("No students are here");
-                    } else {
-                        for (Student st : students) {
-                            System.out.println(st.getName() + "  " + st.getAge() + "  " + st.getClassNumber());
-                        }
-                    }
+                    StudentOnTurn.ShowAllStudents();
                     System.out.println("***********************");
                     break;
                 case 3:

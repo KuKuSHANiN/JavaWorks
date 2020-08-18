@@ -1,13 +1,11 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Student {
     private String name;
     private String age;
     private String classNumber;
 
-    public String getName() {
+    public Student getName() {
         return name;
     }
 
@@ -15,7 +13,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public Student getAge() {
         return age;
     }
 
@@ -23,7 +21,7 @@ public class Student {
         this.age = age;
     }
 
-    public String getClassNumber() {
+    public Student getClassNumber() {
         return classNumber;
     }
 
