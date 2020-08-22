@@ -1,11 +1,11 @@
 package com.company;
 
 public class Student {
-    private String name;
-    private String age;
-    private String classNumber;
+    public String name;
+    public String age;
+    publicgit commit -m "[your message]" String classNumber;
 
-    public Student getName() {
+    public String getName() {
         return name;
     }
 
@@ -13,7 +13,7 @@ public class Student {
         this.name = name;
     }
 
-    public Student getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -21,7 +21,7 @@ public class Student {
         this.age = age;
     }
 
-    public Student getClassNumber() {
+    public String getClassNumber() {
         return classNumber;
     }
 

@@ -7,7 +7,7 @@ public class Journal {
 
     ArrayList<Student> students = new ArrayList<>();
     Scanner in = new Scanner(System.in);
-
+    Student student = new Student();
     public void EnterTheName() {
         in = new Scanner(System.in);
         String name;
@@ -35,11 +35,11 @@ public class Journal {
         student.setAge(ClassNumber);
     }
 
-    public void AddNewStudentsInJournal() {
-        var student = new Student();
-        students.add(student.getName());
-        students.add(student.getAge());
-        students.add(student.getClassNumber());
+    public void  AddNewStudentsInJournal() {
+        Student mainNewStudent = new Student();
+        students.add(mainNewStudent.getName());
+        students.add(mainNewStudent.getAge());
+        students.add(mainNewStudent.getClassNumber());
     }
 
     public void ShowAllStudents()
@@ -47,8 +47,8 @@ public class Journal {
         if (students.isEmpty()) {
             System.out.println("No students are here");
         } else {
-            for (Student st : students) {
-                System.out.println(st.getName() + "  " + st.getAge() + "  " + st.getClassNumber());
+            for (Student mainNewStudent: students) {
+                System.out.println(mainNewStudent.getName() + "  " + mainNewStudent.getAge() + "  " + mainNewStudent.getClassNumber());
             }
         }
     }
