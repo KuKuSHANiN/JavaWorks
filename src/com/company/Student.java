@@ -1,9 +1,33 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Student {
-    public String name;
-    public String age;
-    publicgit commit -m "[your message]" String classNumber;
+    private String name;
+    private String age;
+    private String classNumber;
+
+    public Student() {
+    }
+
+
+    public void EnterTheName() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Please, enter the name: ");
+        name = in.nextLine();
+    }
+    public void EnterTheAge() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Please, enter the age: ");
+        age = in.nextLine();
+
+    }
+
+    public void EnterTheClassNumber() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Please, enter the class number: ");
+        classNumber = in.nextLine();
+    }
 
     public String getName() {
         return name;

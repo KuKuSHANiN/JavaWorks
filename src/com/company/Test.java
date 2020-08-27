@@ -19,18 +19,20 @@ public class Test {
 
             switch (choose) {
                 case 1:
-
-                    StudentOnTurn.EnterTheName();
-                    StudentOnTurn.EnterTheAge();
-                    StudentOnTurn.EnterTheClassNumber();
                     StudentOnTurn.AddNewStudentsInJournal();
                     break;
                 case 2:
                     System.out.println("This is a journal!");
                     System.out.println("***********************");
                     System.out.println("name     age     class");
-                    StudentOnTurn.ShowAllStudents();
-                    System.out.println("***********************");
+                    students.add(StudentOnTurn.OneStudent);
+                    if (students.isEmpty()) {
+                        System.out.println("No students are here");
+                    } else {
+                        for (Student st: students) {
+                            System.out.println(st);
+                        }
+                    System.out.println("***********************");}
                     break;
                 case 3:
                     System.out.println("Finish!");
@@ -39,11 +41,10 @@ public class Test {
                     break;
             }
 
-            for (int i = 0; i < 50; ++i) System.out.println();
+            for (int i = 0; i < 10; ++i) System.out.println();
 
         }
         while (!choose.equals(3));
-
         in.close();
     }
 }
