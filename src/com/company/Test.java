@@ -9,6 +9,8 @@ public class Test {
         ArrayList<Student> students = new ArrayList<>();
         Integer choose;
         Scanner in = new Scanner(System.in);
+
+        // TODO: почему объект класса Journal называется StudentOnTurn? Вводишь себя в заблуждение и других разрабов. Переименуй в journal
         Journal StudentOnTurn = new Journal();
         do {
             System.out.println("1 Create new Student");
@@ -18,13 +20,14 @@ public class Test {
             choose = in.nextInt();
 
             switch (choose) {
-                case 1:
+                case 1: // TODO: эти значения вынеси в константы, а то не понятно при прочтении кода, что должно произойти, если пользователь ввел 1, 2 или 3.
                     StudentOnTurn.AddNewStudentsInJournal();
                     break;
                 case 2:
                     System.out.println("This is a journal!");
                     System.out.println("***********************");
                     System.out.println("name     age     class");
+                    // TODO: проблема тут! Не правильно даже чисто логически. Вот смотри: тут должен быть вызван метод, который выведет записи. Так почему тут вызывается метод добавления студента?
                     students.add(StudentOnTurn.OneStudent);
                     if (students.isEmpty()) {
                         System.out.println("No students are here");
