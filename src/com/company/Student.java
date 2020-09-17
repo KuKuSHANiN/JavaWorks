@@ -1,5 +1,5 @@
 package com.company;
-
+// TODO: вот этот метод идеально сделан, красава!
 public class Student {
     private String name;
     private int age;
