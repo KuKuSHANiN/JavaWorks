@@ -6,47 +6,45 @@ import java.util.Scanner;
 public class Test {
 
     public static void main(String[] args) {
-        ArrayList<Student> students = new ArrayList<>();
+
         Integer choose;
+        int CreateStudent = 1;
+        Integer ShowAllJournal = 2;
+        Integer Quite = 3;
+        Integer AverageStudents = 4;
         Scanner in = new Scanner(System.in);
 
-        // TODO: почему объект класса Journal называется StudentOnTurn? Вводишь себя в заблуждение и других разрабов. Переименуй в journal
-        Journal StudentOnTurn = new Journal();
+                Journal journal = new Journal();
+
         do {
             System.out.println("1 Create new Student");
             System.out.println("2 Show journal");
             System.out.println("3 Quite");
+            System.out.println("4 Get average ages of students");
             System.out.print("Your choice: ");
             choose = in.nextInt();
 
             switch (choose) {
-                case 1: // TODO: эти значения вынеси в константы, а то не понятно при прочтении кода, что должно произойти, если пользователь ввел 1, 2 или 3.
-                    StudentOnTurn.AddNewStudentsInJournal();
+                case 1:
+
+                    journal.AddStudent();
                     break;
                 case 2:
                     System.out.println("This is a journal!");
                     System.out.println("***********************");
                     System.out.println("name     age     class");
-                    // TODO: проблема тут! Не правильно даже чисто логически. Вот смотри: тут должен быть вызван метод, который выведет записи. Так почему тут вызывается метод добавления студента?
-                    students.add(StudentOnTurn.OneStudent);
-                    if (students.isEmpty()) {
-                        System.out.println("No students are here");
-                    } else {
-                        for (Student st: students) {
-                            System.out.println(st);
-                        }
-                    System.out.println("***********************");}
-                    break;
+                    journal.ShowStudents();
+                                       break;
                 case 3:
                     System.out.println("Finish!");
+                    break;
+                case 4:
+                    journal.AverageAgeOfStudents();
                     break;
                 default:
                     break;
             }
-
-            for (int i = 0; i < 10; ++i) System.out.println();
-
-        }
+                    }
         while (!choose.equals(3));
         in.close();
     }
