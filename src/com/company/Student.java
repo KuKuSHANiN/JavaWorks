@@ -3,7 +3,7 @@ package com.company;
 public class Student {
     private String name;
     private int age;
-    private String classNumber;
+    private int classNumber;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class Student {
         this.age = age;
     }
 
-    public String getClassNumber() {
+    public int getClassNumber() {
         return classNumber;
     }
 
-    public void setClassNumber(String classNumber) {
+    public void setClassNumber(int classNumber) {
         this.classNumber = classNumber;
     };
 }
